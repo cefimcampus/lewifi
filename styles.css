@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #F7921E; /* Orange CEFIM */
+    background-color: #f9f9f9;  /* Background blanc cassé pour un look épuré */
     color: #333;
     display: flex;
     justify-content: center;
@@ -17,9 +17,9 @@ body {
 
 .container {
     background-color: #fff;
-    padding: 20px;
+    padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 100%;
     text-align: center;
@@ -27,20 +27,22 @@ body {
 
 .logo {
     width: 120px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 h1 {
     font-size: 2rem;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: #F7921E;
 }
 
 .wifi-info {
     background-color: #f4f4f4;
-    padding: 15px;
+    padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    position: relative;
 }
 
 .wifi-info p {
@@ -52,15 +54,42 @@ h1 {
     background-color: #F7921E;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 25px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
 }
 
 .copy-button:hover {
     background-color: #e87a14;
+    transform: translateY(-2px);
+}
+
+.feedback {
+    background-color: #28a745;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    font-size: 0.9rem;
+    display: inline-block;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.feedback.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.feedback:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
 }
 
 .note {
@@ -73,12 +102,13 @@ a {
     color: #F7921E;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.2s;
 }
 
 a:hover {
     color: #e87a14;
     text-decoration: underline;
+    transform: translateX(2px);
 }
 
 @media (max-width: 768px) {
@@ -92,6 +122,6 @@ a:hover {
 
     .copy-button {
         font-size: 0.9rem;
-        padding: 8px 15px;
+        padding: 8px 20px;
     }
 }
