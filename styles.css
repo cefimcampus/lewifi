@@ -6,14 +6,16 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #F7921E;
-    color: #fff;
+    background-color: #E87A14;  /* Orange légèrement assombri pour plus de contraste */
+    color: #fff;  /* Texte blanc */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     text-align: center;
 }
+
+/* Le reste du code reste inchangé */
 
 .container {
     padding: 20px;
