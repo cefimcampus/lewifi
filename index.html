@@ -14,21 +14,20 @@
             <img src="assets/logo-cefim.png" alt="CEFIM logo" class="logo">
         </header>
         <main>
-            <div class="content-box">
-                <h1>Accès WIFI</h1>
-                <div class="wifi-info">
-                    <p><strong>SSID :</strong> CEFIM_PEDAGO</p>
-                    <p><strong>Clé :</strong> <span id="wifi-key">SunAtnoonTanUS</span></p>
-                    <button class="copy-button" onclick="copyToClipboard()">📋 Copier la clé</button>
-                </div>
-                <p class="note">
-                    📵 <em>Les téléphones sont bannis du réseau, merci de jouer le jeu.</em>
-                </p>
-                <p>Sinon, on dit <strong>le WIFI</strong> ou <strong>la WIFI</strong> ?<br> 
-                   La réponse est par ici : 
-                   <a href="http://www.lawifi.fr" target="_blank">www.lawifi.fr</a>
-                </p>
+            <h1>Accès WIFI</h1>
+            <div class="wifi-info">
+                <p><strong>SSID :</strong> CEFIM_PEDAGO</p>
+                <p><strong>Clé :</strong> <span id="wifi-key">SunAtnoonTanUS</span></p>
+                <button class="copy-button" onclick="copyToClipboard()">📋 Copier la clé</button>
+                <div id="copy-feedback" class="feedback hidden">Clé WIFI copiée !</div>
             </div>
+            <p class="note">
+                📵 <em>Les téléphones sont bannis du réseau, merci de jouer le jeu.</em>
+            </p>
+            <p>Sinon, on dit <strong>le WIFI</strong> ou <strong>la WIFI</strong> ?<br> 
+               La réponse est par ici : 
+               <a href="http://www.lawifi.fr" target="_blank">www.lawifi.fr</a>
+            </p>
         </main>
     </div>
 
@@ -36,7 +35,11 @@
         function copyToClipboard() {
             const wifiKey = document.getElementById('wifi-key').innerText;
             navigator.clipboard.writeText(wifiKey).then(function() {
-                alert('Clé WIFI copiée !');
+                const feedback = document.getElementById('copy-feedback');
+                feedback.classList.remove('hidden');
+                setTimeout(function() {
+                    feedback.classList.add('hidden');
+                }, 2000);
             });
         }
     </script>
